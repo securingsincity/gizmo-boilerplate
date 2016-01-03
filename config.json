@@ -1,0 +1,12 @@
+{
+    "HTTPPort": 8084,
+    "Log": "/tmp/app.log",
+    "HTTPAccessLog": "/tmp/access.log",
+    "MySQL":{
+      "USER": "gizmo",
+      "PW": "gizmo",
+      "Host": "localhost",
+      "DBName": "gizmo",
+      "LOCATION": "America/New_York"
+    }
+}
