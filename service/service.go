@@ -6,6 +6,7 @@ import (
 	"github.com/NYTimes/gziphandler"
 	"github.com/Sirupsen/logrus"
 	_ "github.com/go-sql-driver/mysql"
+	"github.com/jinzhu/gorm"
 	"net/http"
 )
 
@@ -17,6 +18,7 @@ type (
 	Config struct {
 		*config.Server
 		MySQL *config.MySQL
+		DB    gorm.DB
 	}
 	JSONService struct {
 		Config *Config
