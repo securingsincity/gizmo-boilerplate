@@ -16,6 +16,8 @@ func main() {
 		server.Log.Fatal("unable to connect to mysql ", err)
 	}
 	cfg.DB, _ = gorm.Open("mysql", dbSql)
+	mongoSess := cfg.MongoDB.MustMaster()
+	cfg.Mongo = mongoSess.DB(cfg.MongoDB.DB)
 	err = server.Register(service.NewJSONService(cfg))
 	if err != nil {
 		server.Log.Fatal("unable to register service: ", err)
