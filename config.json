@@ -8,5 +8,13 @@
       "Host": "localhost",
       "DBName": "gizmo",
       "LOCATION": "America/New_York"
+    },
+    "MongoDB" : {
+      "User": "",
+      "Pw": "",
+      "Hosts": "localhost",
+      "MasterHost": "localhost",
+      "AuthDB": "",
+      "DB": "main"
     }
 }

@@ -7,6 +7,7 @@ import (
 	"github.com/Sirupsen/logrus"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
+	"gopkg.in/mgo.v2"
 	"net/http"
 )
 
@@ -17,8 +18,10 @@ type (
 	// configuration for our JSONService
 	Config struct {
 		*config.Server
-		MySQL *config.MySQL
-		DB    gorm.DB
+		MySQL   *config.MySQL
+		MongoDB *config.MongoDB
+		DB      gorm.DB
+		Mongo   *mgo.Database
 	}
 	JSONService struct {
 		Config *Config
@@ -77,6 +80,9 @@ func (s *JSONService) JSONEndpoints() map[string]map[string]server.JSONEndpoint 
 		"/cats": map[string]server.JSONEndpoint{
 			"POST": s.CreateCat,
 			"GET":  s.ReadCats,
+		},
+		"/dogs": map[string]server.JSONEndpoint{
+			"GET": s.ReadDogs,
 		},
 	}
 }

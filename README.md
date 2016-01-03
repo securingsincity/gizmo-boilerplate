@@ -1,7 +1,7 @@
 # gizmo-boilerplate
 [NYTimes Gizmo](https://github.com/NYTimes/gizmo/)  Boilerplate
 
-Gets you started with the gizmo microframework using MySQL/GORM.
+Gets you started with the gizmo microframework using MySQL/GORM and MongoDB
 
 ## Install
 
@@ -14,5 +14,4 @@ With a properly configured Go toolchain:
 ## To Do
 
 * [ ] tests
-* [ ] mongo example
 * [ ] authentication
